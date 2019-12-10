@@ -23,7 +23,11 @@ function App() {
   const gameSimulator = () => {
     setHomeScore(Math.floor(Math.random() * 25));
     setAwayScore(Math.floor(Math.random() * 25));
-    setTime("00:00");
+    setTime(
+      `${Math.floor(Math.random() * 2)}${Math.floor(
+        Math.random() * 5
+      )}:${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`
+    );
   };
 
   return (
