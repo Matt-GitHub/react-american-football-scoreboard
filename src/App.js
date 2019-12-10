@@ -19,6 +19,12 @@ function App() {
   const awayFieldGoal = () => {
     setAwayScore(awayScore + 3);
   };
+  const [time, setTime] = useState("00:05");
+  const gameSimulator = () => {
+    setHomeScore(Math.floor(Math.random() * 25));
+    setAwayScore(Math.floor(Math.random() * 25));
+    setTime("00:00");
+  };
 
   return (
     <div className="container">
@@ -31,7 +37,7 @@ function App() {
 
             <div className="home__score">{homeScore}</div>
           </div>
-          <div className="timer">00:03</div>
+          <div className="timer">{time}</div>
           <div className="away">
             <h2 className="away__name">Tigers</h2>
             <div className="away__score">{awayScore}</div>
@@ -56,9 +62,9 @@ function App() {
           <button onClick={awayFieldGoal} className="awayButtons__fieldGoal">
             Away Field Goal
           </button>
-          {/* <button onClick={randomizeGame} className="randomButtons">
-            Randomize Game
-          </button> */}
+          <button onClick={gameSimulator} className="randomButtons">
+            Game Sim
+          </button>
         </div>
       </section>
     </div>
